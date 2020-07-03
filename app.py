@@ -45,7 +45,7 @@ def predict():
         output2 = int(0.6*Present_Price)
         if output<0:
             return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
-        else :
+        elif output < output2 :
             return render_template('index.html',prediction_text="You Can Sell the Car at {}".format(output))
         else :
             return render_template('index.html',prediction_text="You Can Sell the Car at {}".format(output2))
