@@ -44,8 +44,11 @@ def predict():
         output=round(prediction[0],2)
         if output<0:
             return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
-        else:
+        elif output < 0.6*Present_Price:
             return render_template('index.html',prediction_text="You Can Sell The Car at {}".format(output))
+        else output > 0.6*Present_Price:
+            output2 = 0.6*Present_Price
+            return render_template('index.html',prediction_text="You Can Sell The Car at {}".format(output2))
     else:
         return render_template('index.html')
 
