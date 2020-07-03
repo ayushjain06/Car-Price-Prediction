@@ -46,9 +46,9 @@ def predict():
         if output<0:
             return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
         elif output < output2:
-            return render_template('index.html',prediction_text="You Can Sell the Car at {} and {}".format(output,output2))
+            return render_template('index.html',prediction_text="You Can Sell the Car at {}".format(output))
         else :
-            return render_template('index.html',prediction_text="You Can Sell the Car at {} and {}".format(output2,output2))
+            return render_template('index.html',prediction_text="You Can Sell the Car at {}".format(output2))
     else:
         return render_template('index.html')
 
